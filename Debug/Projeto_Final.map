@@ -1,0 +1,587 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.1                     
+******************************************************************************
+>> Linked Thu Nov 26 10:59:02 2020
+
+OUTPUT FILE NAME:   <Projeto_Final.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00002041
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  000037b9  0003c847  R  X
+  SRAM                  20000000   00008000  000005ac  00007a54  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000037c0   000037c0    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00001fb2   00001fb2    r-x .text
+  00002220    00002220    0000152b   0000152b    r-- .const
+  00003750    00003750    00000070   00000070    r-- .cinit
+20000000    20000000    000005ac   00000000    rw-
+  20000000    20000000    00000358   00000000    rw- .bss
+  20000358    20000358    00000200   00000000    rw- .stack
+  20000558    20000558    00000054   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00001fb2     
+                  0000026c    00000aec     funcoes.obj (.text)
+                  00000d58    00000ad4     Nokia5110.obj (.text)
+                  0000182c    0000018c     main.obj (.text)
+                  000019b8    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00001aea    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.text:_nop)
+                  00001aec    00000110     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  00001bfc    000000f4                   : sysctl.obj (.text:SysCtlClockSet)
+                  00001cf0    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00001d8c    00000068     driverlib.lib : interrupt.obj (.text:IntEnable)
+                  00001df4    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00001e5c    00000060     driverlib.lib : timer.obj (.text:TimerConfigure)
+                  00001ebc    00000056                   : gpio.obj (.text:GPIOIntTypeSet)
+                  00001f12    00000002     --HOLE-- [fill = 0]
+                  00001f14    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : hosttime.c.obj (.text:HOSTtime)
+                  00001f5c    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00001fa0    00000038                                   : trgmsg.c.obj (.text:__TI_writemsg)
+                  00001fd8    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  0000200c    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.c.obj (.text:__TI_readmsg)
+                  00002040    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00002074    00000034                                   : rand.c.obj (.text:rand)
+                  000020a8    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  000020d2    00000002     --HOLE-- [fill = 0]
+                  000020d4    00000024     rtsv7M4_T_le_v4SPD16_eabi.lib : rand.c.obj (.text:srand)
+                  000020f8    0000001c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00002114    00000018     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  0000212c    00000014                   : systick.obj (.text:SysTickDisable)
+                  00002140    00000014                   : systick.obj (.text:SysTickEnable)
+                  00002154    00000014                   : systick.obj (.text:SysTickIntEnable)
+                  00002168    00000012                   : timer.obj (.text:TimerLoadSet)
+                  0000217a    00000010                   : interrupt.obj (.text:IntMasterEnable)
+                  0000218a    00000002     --HOLE-- [fill = 0]
+                  0000218c    00000010                   : systick.obj (.text:SysTickPeriodSet)
+                  0000219c    0000000e                   : gpio.obj (.text:GPIOIntDisable)
+                  000021aa    0000000e                   : timer.obj (.text:TimerEnable)
+                  000021b8    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : time.c.obj (.text:__time32)
+                  000021c6    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  000021d4    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsie)
+                  000021e0    0000000c                   : gpio.obj (.text:GPIOIntEnable)
+                  000021ec    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  000021f8    00000008     driverlib.lib : timer.obj (.text:TimerIntEnable)
+                  00002200    00000006                   : gpio.obj (.text:GPIOIntClear)
+                  00002206    00000006                   : gpio.obj (.text:GPIOPinRead)
+                  0000220c    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  00002212    00000004                   : timer.obj (.text:TimerIntClear)
+                  00002216    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  0000221a    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00002220    0000152b     
+                  00002220    000001f8     funcoes.obj (.const:.string:estadio)
+                  00002418    000001f8     funcoes.obj (.const:.string:lose)
+                  00002610    000001f8     funcoes.obj (.const:.string:main_menu)
+                  00002808    000001f8     funcoes.obj (.const:.string:next_fight)
+                  00002a00    000001f8     funcoes.obj (.const:.string:rules)
+                  00002bf8    000001f8     funcoes.obj (.const:.string:win)
+                  00002df0    000001e0     Nokia5110.obj (.const:ASCII)
+                  00002fd0    00000070     Nokia5110.obj (.const:.string:$P$T0$1)
+                  00003040    00000070     driverlib.lib : interrupt.obj (.const)
+                  000030b0    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  0000311c    00000051     funcoes.obj (.const:.string:def1)
+                  0000316d    00000051     funcoes.obj (.const:.string:def2)
+                  000031be    00000051     funcoes.obj (.const:.string:def3)
+                  0000320f    00000051     funcoes.obj (.const:.string:enemy1L)
+                  00003260    00000051     funcoes.obj (.const:.string:enemy1R)
+                  000032b1    00000051     funcoes.obj (.const:.string:enemy2L)
+                  00003302    00000051     funcoes.obj (.const:.string:enemy2R)
+                  00003353    00000051     funcoes.obj (.const:.string:enemy3L)
+                  000033a4    00000051     funcoes.obj (.const:.string:enemy3R)
+                  000033f5    00000051     funcoes.obj (.const:.string:punch1L)
+                  00003446    00000051     funcoes.obj (.const:.string:punch1R)
+                  00003497    00000051     funcoes.obj (.const:.string:punch2L)
+                  000034e8    00000051     funcoes.obj (.const:.string:punch2R)
+                  00003539    00000051     funcoes.obj (.const:.string:punch3L)
+                  0000358a    00000051     funcoes.obj (.const:.string:punch3R)
+                  000035db    00000031     funcoes.obj (.const:.string:def_user)
+                  0000360c    00000031     funcoes.obj (.const:.string:idle)
+                  0000363d    00000031     funcoes.obj (.const:.string:left)
+                  0000366e    00000031     funcoes.obj (.const:.string:right)
+                  0000369f    00000020     funcoes.obj (.const:.string:hp_bar)
+                  000036bf    0000001a     funcoes.obj (.const:.string:enemy1)
+                  000036d9    0000001a     funcoes.obj (.const:.string:enemy2)
+                  000036f3    0000001a     funcoes.obj (.const:.string:enemy3)
+                  0000370d    00000008     Nokia5110.obj (.const:.string:Masks)
+                  00003715    00000003     funcoes.obj (.const:.string:n0)
+                  00003718    00000003     funcoes.obj (.const:.string:n1)
+                  0000371b    00000003     funcoes.obj (.const:.string:n2)
+                  0000371e    00000003     funcoes.obj (.const:.string:n3)
+                  00003721    00000003     funcoes.obj (.const:.string:n4)
+                  00003724    00000003     funcoes.obj (.const:.string:n5)
+                  00003727    00000003     funcoes.obj (.const:.string:n6)
+                  0000372a    00000003     funcoes.obj (.const:.string:n7)
+                  0000372d    00000003     funcoes.obj (.const:.string:num0)
+                  00003730    00000003     funcoes.obj (.const:.string:num1)
+                  00003733    00000003     funcoes.obj (.const:.string:num2)
+                  00003736    00000003     funcoes.obj (.const:.string:num3)
+                  00003739    00000003     funcoes.obj (.const:.string:num4)
+                  0000373c    00000003     funcoes.obj (.const:.string:num5)
+                  0000373f    00000003     funcoes.obj (.const:.string:num6)
+                  00003742    00000003     funcoes.obj (.const:.string:num7)
+                  00003745    00000003     funcoes.obj (.const:.string:num8)
+                  00003748    00000003     funcoes.obj (.const:.string:num9)
+
+.cinit     0    00003750    00000070     
+                  00003750    00000048     (.cinit..data.load) [load image, compression = lzss]
+                  00003798    0000000c     (__TI_handler_table)
+                  000037a4    00000004     --HOLE-- [fill = 0]
+                  000037a8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000037b0    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000000    00000358     UNINITIALIZED
+                  20000000    000001f8     (.common:Screen)
+                  200001f8    00000120     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.c.obj (.bss:_CIOBUF_)
+                  20000318    00000008     (.common:parmbuf)
+                  20000320    00000004     (.common:KO)
+                  20000324    00000004     (.common:KO_ai)
+                  20000328    00000004     (.common:ai_value)
+                  2000032c    00000004     (.common:aux)
+                  20000330    00000004     (.common:aux_ai)
+                  20000334    00000004     (.common:dmg)
+                  20000338    00000004     (.common:dmg_ai)
+                  2000033c    00000004     (.common:estado)
+                  20000340    00000004     (.common:hp)
+                  20000344    00000004     (.common:hp_ai)
+                  20000348    00000004     (.common:lock)
+                  2000034c    00000004     (.common:move)
+                  20000350    00000004     (.common:stamina)
+                  20000354    00000004     (.common:tempo)
+
+.data      0    20000558    00000054     UNINITIALIZED
+                  20000558    00000028     funcoes.obj (.data:numeros)
+                  20000580    00000020     funcoes.obj (.data:mini_num)
+                  200005a0    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.data:$O1$$)
+                  200005a8    00000004                                   : rand.c.obj (.data)
+
+.stack     0    20000358    00000200     UNINITIALIZED
+                  20000358    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2000035c    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       funcoes.obj                    2796   4599      128    
+       Nokia5110.obj                  2772   600       504    
+       tm4c123gh6pm_startup_ccs.obj   12     620       0      
+       main.obj                       396    0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         5976   5819      632    
+                                                              
+    C:/ti/ccs1011/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib
+       sysctl.obj                     574    108       0      
+       gpio.obj                       496    0         0      
+       interrupt.obj                  120    112       0      
+       timer.obj                      140    0         0      
+       systick.obj                    76     0         0      
+       cpu.obj                        12     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         1418   220       0      
+                                                              
+    C:\ti\ccs1011\ccs\tools\compiler\ti-cgt-arm_20.2.1.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       trgmsg.c.obj                   108    0         288    
+       memcpy_t2.asm.obj              156    0         0      
+       copy_decompress_lzss.c.obj     104    0         0      
+       rand.c.obj                     88     0         4      
+       hosttime.c.obj                 72     0         0      
+       autoinit.c.obj                 68     0         0      
+       boot_cortex_m.c.obj            52     0         0      
+       copy_zero_init.c.obj           28     0         0      
+       copy_decompress_none.c.obj     14     0         0      
+       time.c.obj                     14     0         0      
+       _lock.c.obj                    2      0         8      
+       hostopen.c.obj                 0      0         8      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         714    0         308    
+                                                              
+       Stack:                         0      0         512    
+       Linker Generated:              0      108       0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   8108   6147      1452   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000037b0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00003750, load size=00000048 bytes, run addr=20000558, run size=00000054 bytes, compression=lzss
+	.bss: load addr=000037a8, load size=00000008 bytes, run addr=20000000, run size=00000358 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00003798 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+0000221b  C$$EXIT                       
+00001fcf  C$$IO$$                       
+000021d5  CPUcpsie                      
+00000515  Enemy_ai                      
+000020a9  GPIODirModeSet                
+00002201  GPIOIntClear                  
+0000219d  GPIOIntDisable                
+000021e1  GPIOIntEnable                 
+00001ebd  GPIOIntTypeSet                
+000019b9  GPIOPadConfigSet              
+00002207  GPIOPinRead                   
+00002115  GPIOPinTypeGPIOOutput         
+00001f15  HOSTtime                      
+00001d8d  IntEnable                     
+0000217b  IntMasterEnable               
+0000026d  IntPortalF                    
+20000320  KO                            
+20000324  KO_ai                         
+0000370d  Masks                         
+000011a1  Nokia5110_Clear               
+000013fd  Nokia5110_ClearBuffer         
+00001431  Nokia5110_ClrPxl              
+00001427  Nokia5110_DisplayBuffer       
+000011d1  Nokia5110_DrawFullImage       
+000016a7  Nokia5110_DrawImage           
+000016f1  Nokia5110_DrawImage_status    
+00000dc7  Nokia5110_Init                
+00000ee1  Nokia5110_OutChar             
+00000f21  Nokia5110_OutString           
+00000f4d  Nokia5110_OutUDec             
+00001219  Nokia5110_PrintBMP            
+00001489  Nokia5110_PrintBMP2           
+00001151  Nokia5110_SetCursor           
+00001463  Nokia5110_SetPxl              
+00001541  Nokia5110_SetPxl_status       
+0000156d  Nokia5110_img                 
+0000160d  Nokia5110_img_16              
+000021ed  ResetISR                      
+20000000  Screen                        
+00000335  Set_controls                  
+00001aed  SysCtlClockGet                
+00001bfd  SysCtlClockSet                
+0000220d  SysCtlDelay                   
+00001fd9  SysCtlPeripheralEnable        
+0000212d  SysTickDisable                
+00002141  SysTickEnable                 
+00002155  SysTickIntEnable              
+0000218d  SysTickPeriodSet              
+000002dd  Timer0IntHandler              
+000002f3  Timer1IntHandler              
+00000309  Timer2IntHandler              
+0000031f  Timer3IntHandler              
+00001e5d  TimerConfigure                
+000021ab  TimerEnable                   
+00002213  TimerIntClear                 
+000021f9  TimerIntEnable                
+00002169  TimerLoadSet                  
+200001f8  __CIOBUF_                     
+20000558  __STACK_END                   
+00000200  __STACK_SIZE                  
+20000558  __STACK_TOP                   
+000037b0  __TI_CINIT_Base               
+000037c0  __TI_CINIT_Limit              
+00003798  __TI_Handler_Table_Base       
+000037a4  __TI_Handler_Table_Limit      
+00001f5d  __TI_auto_init_nobinit_nopinit
+00001df5  __TI_decompress_lzss          
+000021c7  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+0000200d  __TI_readmsg                  
+00000000  __TI_static_base__            
+00001fa1  __TI_writemsg                 
+000020f9  __TI_zero_init_nomemset       
+00001cf1  __aeabi_memcpy                
+00001cf1  __aeabi_memcpy4               
+00001cf1  __aeabi_memcpy8               
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+20000358  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+000021b9  __time32                      
+00002041  _c_int00_noargs               
+200005a0  _lock                         
+00001aeb  _nop                          
+UNDEFED   _system_post_cinit            
+00002217  _system_pre_init              
+200005a4  _unlock                       
+0000221b  abort                         
+20000328  ai_value                      
+2000032c  aux                           
+20000330  aux_ai                        
+ffffffff  binit                         
+0000311c  def1                          
+0000316d  def2                          
+000031be  def3                          
+000035db  def_user                      
+20000334  dmg                           
+20000338  dmg_ai                        
+000036bf  enemy1                        
+0000320f  enemy1L                       
+00003260  enemy1R                       
+000036d9  enemy2                        
+000032b1  enemy2L                       
+00003302  enemy2R                       
+000036f3  enemy3                        
+00003353  enemy3L                       
+000033a4  enemy3R                       
+00002220  estadio                       
+2000033c  estado                        
+00000000  g_pfnVectors                  
+00000815  game                          
+000003a7  get_controls                  
+20000340  hp                            
+20000344  hp_ai                         
+0000369f  hp_bar                        
+0000360c  idle                          
+0000363d  left                          
+20000348  lock                          
+00002418  lose                          
+00001837  main                          
+00002610  main_menu                     
+00001cf1  memcpy                        
+20000580  mini_num                      
+2000034c  move                          
+00003715  n0                            
+00003718  n1                            
+0000371b  n2                            
+0000371e  n3                            
+00003721  n4                            
+00003724  n5                            
+00003727  n6                            
+0000372a  n7                            
+00002808  next_fight                    
+0000372d  num0                          
+00003730  num1                          
+00003733  num2                          
+00003736  num3                          
+00003739  num4                          
+0000373c  num5                          
+0000373f  num6                          
+00003742  num7                          
+00003745  num8                          
+00003748  num9                          
+20000558  numeros                       
+20000318  parmbuf                       
+000033f5  punch1L                       
+00003446  punch1R                       
+00003497  punch2L                       
+000034e8  punch2R                       
+00003539  punch3L                       
+0000358a  punch3R                       
+00002075  rand                          
+0000366e  right                         
+00002a00  rules                         
+000020d5  srand                         
+20000350  stamina                       
+0000076d  start                         
+20000354  tempo                         
+000021b9  time                          
+0000182d  trata_Systick                 
+00002bf8  win                           
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+0000026d  IntPortalF                    
+000002dd  Timer0IntHandler              
+000002f3  Timer1IntHandler              
+00000309  Timer2IntHandler              
+0000031f  Timer3IntHandler              
+00000335  Set_controls                  
+000003a7  get_controls                  
+00000515  Enemy_ai                      
+0000076d  start                         
+00000815  game                          
+00000dc7  Nokia5110_Init                
+00000ee1  Nokia5110_OutChar             
+00000f21  Nokia5110_OutString           
+00000f4d  Nokia5110_OutUDec             
+00001151  Nokia5110_SetCursor           
+000011a1  Nokia5110_Clear               
+000011d1  Nokia5110_DrawFullImage       
+00001219  Nokia5110_PrintBMP            
+000013fd  Nokia5110_ClearBuffer         
+00001427  Nokia5110_DisplayBuffer       
+00001431  Nokia5110_ClrPxl              
+00001463  Nokia5110_SetPxl              
+00001489  Nokia5110_PrintBMP2           
+00001541  Nokia5110_SetPxl_status       
+0000156d  Nokia5110_img                 
+0000160d  Nokia5110_img_16              
+000016a7  Nokia5110_DrawImage           
+000016f1  Nokia5110_DrawImage_status    
+0000182d  trata_Systick                 
+00001837  main                          
+000019b9  GPIOPadConfigSet              
+00001aeb  _nop                          
+00001aed  SysCtlClockGet                
+00001bfd  SysCtlClockSet                
+00001cf1  __aeabi_memcpy                
+00001cf1  __aeabi_memcpy4               
+00001cf1  __aeabi_memcpy8               
+00001cf1  memcpy                        
+00001d8d  IntEnable                     
+00001df5  __TI_decompress_lzss          
+00001e5d  TimerConfigure                
+00001ebd  GPIOIntTypeSet                
+00001f15  HOSTtime                      
+00001f5d  __TI_auto_init_nobinit_nopinit
+00001fa1  __TI_writemsg                 
+00001fcf  C$$IO$$                       
+00001fd9  SysCtlPeripheralEnable        
+0000200d  __TI_readmsg                  
+00002041  _c_int00_noargs               
+00002075  rand                          
+000020a9  GPIODirModeSet                
+000020d5  srand                         
+000020f9  __TI_zero_init_nomemset       
+00002115  GPIOPinTypeGPIOOutput         
+0000212d  SysTickDisable                
+00002141  SysTickEnable                 
+00002155  SysTickIntEnable              
+00002169  TimerLoadSet                  
+0000217b  IntMasterEnable               
+0000218d  SysTickPeriodSet              
+0000219d  GPIOIntDisable                
+000021ab  TimerEnable                   
+000021b9  __time32                      
+000021b9  time                          
+000021c7  __TI_decompress_none          
+000021d5  CPUcpsie                      
+000021e1  GPIOIntEnable                 
+000021ed  ResetISR                      
+000021f9  TimerIntEnable                
+00002201  GPIOIntClear                  
+00002207  GPIOPinRead                   
+0000220d  SysCtlDelay                   
+00002213  TimerIntClear                 
+00002217  _system_pre_init              
+0000221b  C$$EXIT                       
+0000221b  abort                         
+00002220  estadio                       
+00002418  lose                          
+00002610  main_menu                     
+00002808  next_fight                    
+00002a00  rules                         
+00002bf8  win                           
+0000311c  def1                          
+0000316d  def2                          
+000031be  def3                          
+0000320f  enemy1L                       
+00003260  enemy1R                       
+000032b1  enemy2L                       
+00003302  enemy2R                       
+00003353  enemy3L                       
+000033a4  enemy3R                       
+000033f5  punch1L                       
+00003446  punch1R                       
+00003497  punch2L                       
+000034e8  punch2R                       
+00003539  punch3L                       
+0000358a  punch3R                       
+000035db  def_user                      
+0000360c  idle                          
+0000363d  left                          
+0000366e  right                         
+0000369f  hp_bar                        
+000036bf  enemy1                        
+000036d9  enemy2                        
+000036f3  enemy3                        
+0000370d  Masks                         
+00003715  n0                            
+00003718  n1                            
+0000371b  n2                            
+0000371e  n3                            
+00003721  n4                            
+00003724  n5                            
+00003727  n6                            
+0000372a  n7                            
+0000372d  num0                          
+00003730  num1                          
+00003733  num2                          
+00003736  num3                          
+00003739  num4                          
+0000373c  num5                          
+0000373f  num6                          
+00003742  num7                          
+00003745  num8                          
+00003748  num9                          
+00003798  __TI_Handler_Table_Base       
+000037a4  __TI_Handler_Table_Limit      
+000037b0  __TI_CINIT_Base               
+000037c0  __TI_CINIT_Limit              
+20000000  Screen                        
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+200001f8  __CIOBUF_                     
+20000318  parmbuf                       
+20000320  KO                            
+20000324  KO_ai                         
+20000328  ai_value                      
+2000032c  aux                           
+20000330  aux_ai                        
+20000334  dmg                           
+20000338  dmg_ai                        
+2000033c  estado                        
+20000340  hp                            
+20000344  hp_ai                         
+20000348  lock                          
+2000034c  move                          
+20000350  stamina                       
+20000354  tempo                         
+20000358  __stack                       
+20000558  __STACK_END                   
+20000558  __STACK_TOP                   
+20000558  numeros                       
+20000580  mini_num                      
+200005a0  _lock                         
+200005a4  _unlock                       
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[165 symbols]
